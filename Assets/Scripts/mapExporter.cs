@@ -9,8 +9,8 @@ public class mapExporter : MonoBehaviour {
     string m_Path;
 
     public GameObject[] blocks;
-	
 
+    public GameObject[] full_blocks;
 	void Update () {
 		if (Input.GetKeyDown(KeyCode.E))
         {
@@ -45,6 +45,15 @@ public class mapExporter : MonoBehaviour {
     void RegisterBlocks(FileStream fs)
     {
         blocks = GameObject.FindGameObjectsWithTag("Plane");
+        full_blocks = GameObject.FindGameObjectsWithTag("Block");
+        int sides = 0;
+        int block_number = 0;
+        int total_blocks = 0;
+
+        foreach(GameObject full_block in full_blocks)
+        {
+            total_blocks += 1;
+        }
 
         AddText(fs, "{\n");
 
@@ -70,9 +79,23 @@ public class mapExporter : MonoBehaviour {
             AddText(fs, vertex1);
             AddText(fs, vertex2);
             AddText(fs, vertex3);
-        }
 
-        AddText(fs, "}\n");
+            sides += 1;
+
+            block_number += 1;
+
+            if (sides == 6 && block_number < total_blocks)
+            {
+                AddText(fs, "}\n");
+                AddText(fs, "{\n");
+                sides = 0;
+            }
+
+            if (sides == 6 && block_number >= total_blocks)
+            {
+                AddText(fs, "}\n");
+            }
+        }
     }
 
     private static void AddText(FileStream fs, string value)
