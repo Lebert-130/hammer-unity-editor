@@ -41,6 +41,9 @@ public class tools : MonoBehaviour {
         GameObject back = blockObject.transform.GetChild(2).gameObject;
         meshGenerator mesh_back = back.GetComponent<meshGenerator>();
 
+        GameObject front = blockObject.transform.GetChild(3).gameObject;
+        meshGenerator mesh_front = front.GetComponent<meshGenerator>();
+
         GameObject bottom = blockObject.transform.GetChild(4).gameObject;
         meshGenerator mesh_bottom = bottom.GetComponent<meshGenerator>();
 
@@ -51,15 +54,26 @@ public class tools : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            mesh_left.vertex1 = new Vector3(spawnPosition.x, 0, 0);
-            mesh_left.vertex2 = new Vector3(spawnPosition.x, -1, 0);
+            float z_point = 0;
 
-            mesh_back.vertex3 = new Vector3(spawnPosition.x, 0, 0);
-            mesh_back.vertex4 = new Vector3(spawnPosition.x, -1, 0);
+            if(spawnPosition.z == 1)
+            {
+                z_point = 0;
+            }
+            else
+            {
+                z_point = spawnPosition.z;
+            }
 
-            mesh_bottom.vertex2 = new Vector3(spawnPosition.x, -1, 0);
+            mesh_left.vertex1 = new Vector3(spawnPosition.x, 0, z_point);
+            mesh_left.vertex2 = new Vector3(spawnPosition.x, -1, z_point);
 
-            mesh_top.vertex1 = new Vector3(spawnPosition.x, 0, 0);
+            mesh_back.vertex3 = new Vector3(spawnPosition.x, 0, z_point);
+            mesh_back.vertex4 = new Vector3(spawnPosition.x, -1, z_point);
+
+            mesh_bottom.vertex2 = new Vector3(spawnPosition.x, -1, z_point);
+
+            mesh_top.vertex1 = new Vector3(spawnPosition.x, 0, z_point);
 
             preview_Object = Instantiate(previewObject, spawnPosition, new Quaternion(0, 0, 0, 0));
 
@@ -71,8 +85,16 @@ public class tools : MonoBehaviour {
             mesh_top.vertex3.x = spawnPosition.x;
             mesh_top.vertex4.x = spawnPosition.x;
 
+            mesh_right.vertex1.x = spawnPosition.x;
+            mesh_right.vertex2.x = spawnPosition.x;
             mesh_right.vertex3.x = spawnPosition.x;
             mesh_right.vertex4.x = spawnPosition.x;
+
+            mesh_back.vertex1.x = spawnPosition.x;
+            mesh_back.vertex2.x = spawnPosition.x;
+
+            mesh_front.vertex3.x = spawnPosition.x;
+            mesh_front.vertex4.x = spawnPosition.x;
 
             mesh_bottom.vertex3.x = spawnPosition.x;
             mesh_bottom.vertex4.x = spawnPosition.x;
@@ -101,6 +123,11 @@ public class tools : MonoBehaviour {
 
                 mesh_right.vertex1.z = spawnPosition.z;
                 mesh_right.vertex2.z = spawnPosition.z;
+
+                mesh_front.vertex1.z = spawnPosition.z;
+                mesh_front.vertex2.z = spawnPosition.z;
+                mesh_front.vertex3.z = spawnPosition.z;
+                mesh_front.vertex4.z = spawnPosition.z;
 
                 mesh_bottom.vertex1.z = spawnPosition.z;
                 mesh_bottom.vertex3.z = spawnPosition.z;
