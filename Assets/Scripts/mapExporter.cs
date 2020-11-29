@@ -82,7 +82,10 @@ public class mapExporter : MonoBehaviour {
 
             sides += 1;
 
-            block_number += 1;
+            if (sides == 6)
+            {
+                block_number += 1;
+            }
 
             if (sides == 6 && block_number < total_blocks)
             {
