@@ -12,8 +12,8 @@ public class meshGenerator : MonoBehaviour {
     public Vector3 vertex3;
     public Vector3 vertex4;
 
-    Vector3[] vertices;
-    int[] triangles;
+    public Vector3[] vertices;
+    public int[] triangles;
 
 	void Start () {
         mesh = new Mesh();
@@ -40,7 +40,7 @@ public class meshGenerator : MonoBehaviour {
         };
     }
 
-    void UpdateMesh()
+    public void UpdateMesh()
     {
         mesh.Clear();
 
