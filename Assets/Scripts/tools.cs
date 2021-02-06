@@ -148,12 +148,6 @@ public class tools : MonoBehaviour {
 
                 mesh_front.vertex3.x = 0;
                 mesh_front.vertex4.x = 0;
-
-                mesh_bottom.vertex1.x = spawnPosition.x;
-                mesh_bottom.vertex2.x = spawnPosition.x;
-
-                mesh_bottom.vertex3.x = 0;
-                mesh_bottom.vertex4.x = 0;
             }
 
             if (spawnPosition.z == 0)
@@ -172,47 +166,6 @@ public class tools : MonoBehaviour {
                 mesh_left.vertex3.z = spawnPosition.z;
                 mesh_left.vertex4.z = spawnPosition.z;
 
-                if (spawnPosition.z >= 0)
-                {
-                    mesh_right.vertex1.z = spawnPosition.z;
-                    mesh_right.vertex2.z = spawnPosition.z;
-
-                    mesh_left.vertex1.z = 0;
-                    mesh_left.vertex2.z = 0;
-
-                    mesh_left.vertex3.z = spawnPosition.z;
-                    mesh_left.vertex4.z = spawnPosition.z;
-
-                    mesh_right.vertex3.z = 0;
-                    mesh_right.vertex4.z = 0;
-
-                    mesh_top.vertex1.z = 0;
-                    mesh_top.vertex3.z = 0;
-
-                    mesh_top.vertex2.z = spawnPosition.z;
-                    mesh_top.vertex4.z = spawnPosition.z;
-                }
-                else
-                {
-                    mesh_right.vertex1.z = 0;
-                    mesh_right.vertex2.z = 0;
-
-                    mesh_right.vertex3.z = spawnPosition.z;
-                    mesh_right.vertex4.z = spawnPosition.z;
-
-                    mesh_left.vertex1.z = spawnPosition.z;
-                    mesh_left.vertex2.z = spawnPosition.z;
-
-                    mesh_left.vertex3.z = 0;
-                    mesh_left.vertex4.z = 0;
-
-                    mesh_top.vertex1.z = spawnPosition.z;
-                    mesh_top.vertex3.z = spawnPosition.z;
-
-                    mesh_top.vertex2.z = 0;
-                    mesh_top.vertex4.z = 0; 
-                }
-
                 mesh_front.vertex1.z = spawnPosition.z;
                 mesh_front.vertex2.z = spawnPosition.z;
                 mesh_front.vertex3.z = spawnPosition.z;
@@ -220,6 +173,135 @@ public class tools : MonoBehaviour {
 
                 mesh_bottom.vertex1.z = spawnPosition.z;
                 mesh_bottom.vertex3.z = spawnPosition.z;
+            }
+
+            if (spawnPosition.z >= 0)
+            {
+                mesh_right.vertex1.z = spawnPosition.z;
+                mesh_right.vertex2.z = spawnPosition.z;
+
+                mesh_left.vertex1.z = 0;
+                mesh_left.vertex2.z = 0;
+
+                mesh_left.vertex3.z = spawnPosition.z;
+                mesh_left.vertex4.z = spawnPosition.z;
+
+                mesh_right.vertex3.z = 0;
+                mesh_right.vertex4.z = 0;
+
+                mesh_top.vertex1.z = 0;
+                mesh_top.vertex3.z = 0;
+
+                mesh_top.vertex2.z = spawnPosition.z;
+                mesh_top.vertex4.z = spawnPosition.z;
+            }
+            else
+            {
+                mesh_right.vertex1.z = 0;
+                mesh_right.vertex2.z = 0;
+
+                mesh_right.vertex3.z = spawnPosition.z;
+                mesh_right.vertex4.z = spawnPosition.z;
+
+                mesh_left.vertex1.z = spawnPosition.z;
+                mesh_left.vertex2.z = spawnPosition.z;
+
+                mesh_left.vertex3.z = 0;
+                mesh_left.vertex4.z = 0;
+
+                mesh_top.vertex1.z = spawnPosition.z;
+                mesh_top.vertex3.z = spawnPosition.z;
+
+                mesh_top.vertex2.z = 0;
+                mesh_top.vertex4.z = 0;
+            }
+
+            if (spawnPosition.x <= 0)
+            {
+                mesh_right.vertex1.y = -1;
+                mesh_right.vertex2.y = 0;
+                mesh_right.vertex3.y = -1;
+                mesh_right.vertex4.y = 0;
+
+                if (spawnPosition.z <= 0)
+                {
+                    mesh_left.vertex1.x = 0;
+                    mesh_left.vertex2.x = 0;
+
+                    mesh_left.vertex1.z = 0;
+                    mesh_left.vertex2.z = 0;
+                    mesh_left.vertex3.z = spawnPosition.z;
+                    mesh_left.vertex4.z = spawnPosition.z;
+
+                    mesh_back.vertex1.x = spawnPosition.x;
+                    mesh_back.vertex2.x = spawnPosition.x;
+                    mesh_back.vertex3.x = 0;
+                    mesh_back.vertex4.x = 0;
+                }
+                else
+                {
+                    mesh_left.vertex1.z = spawnPosition.z;
+                    mesh_left.vertex2.z = spawnPosition.z;
+                    mesh_left.vertex3.z = 0;
+                    mesh_left.vertex4.z = 0;
+
+                    mesh_back.vertex1.x = 0;
+                    mesh_back.vertex2.x = 0;
+                    mesh_back.vertex3.x = spawnPosition.x;
+                    mesh_back.vertex4.x = spawnPosition.x;
+
+                    mesh_bottom.vertex1.x = spawnPosition.x;
+                    mesh_bottom.vertex2.x = spawnPosition.x;
+                    mesh_bottom.vertex3.x = 0;
+                    mesh_bottom.vertex4.x = 0;
+                }
+
+                mesh_back.vertex1.y = 0;
+                mesh_back.vertex2.y = -1;
+                mesh_back.vertex3.y = 0;
+                mesh_back.vertex4.y = -1;
+
+                mesh_front.vertex1.y = -1;
+                mesh_front.vertex2.y = 0;
+                mesh_front.vertex3.y = -1;
+                mesh_front.vertex4.y = 0;
+
+                mesh_top.vertex1.x = spawnPosition.x;
+                mesh_top.vertex2.x = spawnPosition.x;
+                mesh_top.vertex3.x = 0;
+                mesh_top.vertex4.x = 0;
+            }
+            else
+            {
+                if (spawnPosition.z >= 0)
+                {
+                    mesh_right.vertex1.z = 0;
+                    mesh_right.vertex2.z = 0;
+                    mesh_right.vertex3.z = spawnPosition.z;
+                    mesh_right.vertex4.z = spawnPosition.z;
+
+                    mesh_front.vertex1.x = spawnPosition.x;
+                    mesh_front.vertex2.x = spawnPosition.x;
+                    mesh_front.vertex3.x = 0;
+                    mesh_front.vertex4.x = 0;
+                }
+                else
+                {
+                    mesh_right.vertex1.z = spawnPosition.z;
+                    mesh_right.vertex2.z = spawnPosition.z;
+                    mesh_right.vertex3.z = 0;
+                    mesh_right.vertex4.z = 0;
+
+                    mesh_front.vertex1.x = 0;
+                    mesh_front.vertex2.x = 0;
+                    mesh_front.vertex3.x = spawnPosition.x;
+                    mesh_front.vertex4.x = spawnPosition.x;
+
+                    mesh_bottom.vertex1.x = spawnPosition.x;
+                    mesh_bottom.vertex2.x = spawnPosition.x;
+                    mesh_bottom.vertex3.x = 0;
+                    mesh_bottom.vertex4.x = 0;
+                }
             }
 
             preview_Object.transform.localScale = new Vector3((spawnPosition.x) - (tempPosition.x), 1, (spawnPosition.z) - (tempPosition.z));
