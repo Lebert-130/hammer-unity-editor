@@ -1,3 +1,2 @@
 # Hammer Unity Editor
-
-This is a Hammer Editor for Goldsrc made in the Unity engine
+It sucks lol, and it's abandonded, so I just unprivated this because idc anymore.
